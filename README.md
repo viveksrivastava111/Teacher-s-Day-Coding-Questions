@@ -8,7 +8,7 @@ End Date: September 5, 2025<br>
 Total Days: 43 <br>
 
 ###  Track Chosen <br>
-I’ll be doing the Beginner's Track, solving one problem every day from the challenge.<br>
+I’ll be doing the Beginner's + Advanced Track, solving 2-3 problems every day from the challenge.<br>
 
 ## Challenge Website: teachers-day-vitb.vercel.app <br>
 
