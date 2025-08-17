@@ -1,0 +1,39 @@
+#include <iostream>
+#include <queue>
+#include <vector>
+
+using namespace std;
+
+int main() {
+    int n, m;
+    cin >> n >> m;
+
+    vector<int> a(n);
+    queue<int> q;
+    vector<int> processed(n, 0);
+
+    for (int i = 0; i < n; i++) {
+        cin >> a[i];
+        q.push(i);
+    }
+
+    int lastPerson = 0;
+
+    while (!q.empty()) {
+        int f = q.front();
+        q.pop();
+        lastPerson = f + 1;
+
+        if (processed[f] + m >= a[f]) {
+            continue;
+        } else {
+            processed[f] += m;
+            q.push(f);
+        }
+    }
+
+    cout << lastPerson << endl;
+
+    return 0;
+}
+
