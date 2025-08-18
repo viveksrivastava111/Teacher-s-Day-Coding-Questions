@@ -1,0 +1,43 @@
+#include <iostream>
+#include <vector>
+#include <cmath>
+#include <sstream>
+#include <algorithm>
+
+using namespace std;
+
+typedef long long ll;
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    vector<ll> v;
+    v.push_back(4);
+    v.push_back(7);
+
+    ll num_of_bits = 2;
+    while (num_of_bits <= 10) {
+        for (ll i = 0; i <= (pow(2, num_of_bits) - 1); i++) {
+            string ret = "";
+            for (ll j = num_of_bits - 1; j >= 0; j--) {
+                if ((i >> j) & 1) ret += '7';
+                else ret += '4';
+            }
+            ll num;
+            stringstream ss(ret);
+            ss >> num;
+            v.push_back(num);
+        }
+        num_of_bits++;
+    }
+
+    ll n;
+    cin >> n;
+
+    sort(v.begin(), v.end());
+    auto lower = lower_bound(v.begin(), v.end(), n);
+    cout << (lower - v.begin() + 1) << endl;
+
+    return 0;
+}
