@@ -1,0 +1,30 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define KAMEHAMEHA ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+
+void solve() {
+    ll x, y, z;
+    cin >> x >> y >> z;
+    
+    vector<ll> v = {x, y, z};
+    sort(v.begin(), v.end());  // Sort to identify largest, mid, smallest easily
+
+    // If the two largest are equal, we can construct a valid (a, b, c)
+    if (v[1] == v[2]) {
+        cout << "YES\n";
+        cout << v[0] << " " << v[0] << " " << v[2] << "\n";
+    } else {
+        cout << "NO\n";
+    }
+}
+
+int main() {
+    KAMEHAMEHA
+    int t;
+    cin >> t;
+    while (t--) {
+        solve();
+    }
+    return 0;
+}
