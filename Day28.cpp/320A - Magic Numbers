@@ -1,0 +1,32 @@
+#include <iostream>
+#include <string>
+#include <algorithm> // For std::string::substr
+ 
+int main() {
+    std::string s;
+    std::cin >> s;
+ 
+    int i = 0;
+    bool isMagic = true;
+ 
+    while (i < s.length()) {
+        if (i + 2 < s.length() && s.substr(i, 3) == "144") {
+            i += 3;
+        } else if (i + 1 < s.length() && s.substr(i, 2) == "14") {
+            i += 2;
+        } else if (s[i] == '1') {
+            i += 1;
+        } else {
+            isMagic = false;
+            break;
+        }
+    }
+ 
+    if (isMagic) {
+        std::cout << "YES" << std::endl;
+    } else {
+        std::cout << "NO" << std::endl;
+    }
+ 
+    return 0;
+}
