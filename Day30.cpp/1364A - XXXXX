@@ -1,0 +1,32 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define fastread() ios_base::sync_with_stdio(false); cin.tie(NULL);
+#define ll long long
+#define ull unsigned long long
+
+int main() {
+    fastread();
+    int t; cin >> t;
+    while (t--) {
+        int n, x; cin >> n >> x;
+        vector<int> a(n);
+        ull sum = 0;
+        for (int &v : a) {
+            cin >> v;
+            sum += v;
+        }
+
+        if (sum % x != 0) {
+            cout << n << '\n';
+            continue;
+        }
+
+        int left = 0, right = n - 1;
+        while (left < n && a[left] % x == 0) ++left;
+        while (right >= 0 && a[right] % x == 0) --right;
+
+        if (left == n) cout << -1 << '\n';
+        else cout << max(n - left - 1, right) << '\n';
+    }
+    return 0;
+}
