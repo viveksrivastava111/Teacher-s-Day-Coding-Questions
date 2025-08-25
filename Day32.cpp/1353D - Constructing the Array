@@ -1,0 +1,52 @@
+#include <iostream>
+#include <queue>
+#include <cstring>
+
+using namespace std;
+
+const int MAX_N = 2e5 + 5;
+long long arr[MAX_N];
+long long n, currentNum;
+
+// Use a custom comparator for the priority queue
+auto cmp = [](pair<int, int> a, pair<int, int> b) {
+    int lenA = a.second - a.first;
+    int lenB = b.second - b.first;
+    return lenA == lenB ? a.first > b.first : lenA < lenB;
+};
+
+// Priority queue (max heap by interval length, then by smaller start index)
+priority_queue<pair<int, int>, vector<pair<int, int>>, decltype(cmp)> pq(cmp);
+
+// Fill the array using divide and conquer strategy
+void fillArray() {
+    while (!pq.empty()) {
+        auto [l, r] = pq.top(); pq.pop();
+        int mid = l + (r - l) / 2;
+        if (arr[mid] == 0) {
+            arr[mid] = currentNum++;
+        }
+        if (l <= mid - 1) pq.emplace(l, mid - 1);
+        if (mid + 1 <= r) pq.emplace(mid + 1, r);
+    }
+}
+
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        cin >> n;
+        memset(arr, 0, sizeof(long long) * (n + 2)); // Only clear needed range
+        currentNum = 1;
+        while (!pq.empty()) pq.pop(); // Clear priority queue
+
+        pq.emplace(1, n);
+        fillArray();
+
+        for (int i = 1; i <= n; ++i) {
+            cout << arr[i] << " ";
+        }
+        cout << "\n";
+    }
+    return 0;
+}
