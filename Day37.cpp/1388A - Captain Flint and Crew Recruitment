@@ -1,0 +1,28 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <cstdio>
+#include <iostream>
+using namespace std;
+
+int main() {
+    int t, n;
+    scanf("%d", &t);
+    while (t--) {
+        scanf("%d", &n);
+        int a = 6, b = 10, c = 14;
+        int d = n - (a + b + c);
+
+        // Handle the case when d is equal to a, b, or c
+        if (d == a || d == b || d == c || d <= 0) {
+            c = 15;
+            d = n - (a + b + c);
+        }
+
+        if (d > 0 && d != a && d != b && d != c) {
+            printf("YES\n");
+            printf("%d %d %d %d\n", a, b, c, d);
+        } else {
+            printf("NO\n");
+        }
+    }
+    return 0;
+}
