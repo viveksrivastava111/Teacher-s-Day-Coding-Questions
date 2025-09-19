@@ -13,7 +13,7 @@ I’ll be doing the Beginner's + Advanced Track, solving 2-3 problems every day 
 ## Challenge Website: teachers-day-vitb.vercel.app <br>
 
 ### Challenge Format<br>
-Solve one coding problem every day.<br>
+Solve one/two coding problem every day.<br>
 Problems can be from platforms like LeetCode, HackerRank, Codeforces, etc.<br>
 Post progress on LinkedIn weekly or daily (optional).<br>
 Tag: #TeachersDayChallenge #VITBhopal #DrGViswanathan
