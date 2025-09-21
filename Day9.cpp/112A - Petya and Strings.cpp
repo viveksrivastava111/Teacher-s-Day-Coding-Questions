@@ -8,9 +8,9 @@ int main()
     transform(s1.begin(),s1.end(),s1.begin(), ::tolower);
     transform(s2.begin(),s2.end(),s2.begin(), ::tolower);
     if(s1<s2)
-     cout<<"-1"<<endl;
+         cout<<"-1"<<endl;
     else if(s2<s1)
-     cout<<"1"<<endl;
+         cout<<"1"<<endl;
     else if(s1==s2)
-     cout<<"0"<<endl;
+         cout<<"0"<<endl;
 }
