@@ -9,7 +9,6 @@ public:
         return {it->second, i};
       numToIndex[nums[i]] = i;
     }
-
     throw;
   }
 };
