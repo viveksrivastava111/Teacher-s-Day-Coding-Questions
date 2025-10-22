@@ -11,6 +11,7 @@ class Solution {
       }
     prev->next = nullptr;  // In case that the last value equals `val`.
 
+   
     return dummy.next;
   }
 };
