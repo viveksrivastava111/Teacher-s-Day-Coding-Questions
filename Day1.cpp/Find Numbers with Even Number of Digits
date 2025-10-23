@@ -8,6 +8,7 @@ class Solution {
                 num /= 10;
                 digi++;
             }
+
             if (digi % 2 == 0) {
                 avicount++;
             }
