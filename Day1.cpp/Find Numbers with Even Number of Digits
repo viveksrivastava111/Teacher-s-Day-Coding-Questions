@@ -4,7 +4,8 @@ class Solution {
         int avicount = 0;
         for (int num : nums) {
             int digi = 0;
-            while (num != 0) {
+            while (num != 0)
+            {
                 num /= 10;
                 digi++;
             }
